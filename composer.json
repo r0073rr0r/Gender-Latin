@@ -1,0 +1,25 @@
+{
+	"name": "peterkahl/gender-latin",
+	"type": "library",
+	"description": "Detects gender from person's name in Latin script.",
+	"keywords": ["latin", "latin-gender", "gender-detection"],
+	"homepage": "https://github.com/peterkahl/Gender-Latin",
+	"license": "Apache License Version 2.0",
+	"authors": [
+		{
+			"name": "Peter Kahl",
+			"email": "peter.kahl@colossalmind.com",
+			"homepage": "https://www.colossalmind.com/",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"ext-gender": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"peterkahl\\GenderLatin\\": "src/"
+		}
+	}
+}
