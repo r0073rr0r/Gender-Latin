@@ -3,7 +3,7 @@
  * Gender Latin
  * Detects gender from person's name in Latin script.
  *
- * @version    0.1 (2017-05-13 23:41:00 GMT)
+ * @version    0.2 (2017-07-15 07:39:00 GMT)
  * @author     Peter Kahl <peter.kahl@colossalmind.com>
  * @since      2017-01-27
  * @license    Apache License, Version 2.0
@@ -29,6 +29,7 @@
 namespace peterkahl\GenderLatin;
 
 use \Gender\Gender;
+use \Exception;
 
 class GenderLatin {
 
@@ -42,7 +43,7 @@ class GenderLatin {
    * First Name: REQUIRED
    * @var string
    */
-  public $firstName;
+  public $firstName = '';
 
   /**
    * Last Name: OPTIONAL
@@ -53,6 +54,10 @@ class GenderLatin {
   #===================================================================
 
   public function getGender() {
+
+    if (empty($this->firstName)) {
+      throw new Exception('Property firstName cannot be empty');
+    }
 
     if (!extension_loaded('Gender')) {
       throw new Exception('PHP extension Gender is not loaded');
@@ -2567,6 +2572,7 @@ class GenderLatin {
     'vanessa',
     'vendula',
     'venessa',
+    'vera',
     'veronica',
     'veronika',
     'vicki',
